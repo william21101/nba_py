@@ -82,7 +82,7 @@ def _get_json(endpoint, params, referer='scores'):
         json (json): json object for selected API call
     """
     h = dict(HEADERS)
-    h['referer'] = 'http://stats.nba.com/{ref}/'.format(ref=referer)
+    h['referer'] = 'https://stats.nba.com/{ref}/'.format(ref=referer)
     _get = get(BASE_URL.format(endpoint=endpoint), params=params,
                headers=h)
     # print _get.url
