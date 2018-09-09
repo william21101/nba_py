@@ -22,13 +22,7 @@ except ImportError:
 # Constants
 TODAY = datetime.today()
 BASE_URL = 'https://stats.nba.com/stats/{endpoint}'
-HEADERS = {
-    'user-agent': ('customheader')
-    'Dnt': ('1'),
-    'Accept-Encoding': ('gzip, deflate, sdch'),
-    'Accept-Language': ('en'),
-    'origin': ('https://stats.nba.com')
-    }
+HEADERS = { 'user-agent': ('customheader'), # noqa: E501 'Dnt': ('1'), 'Accept-Encoding': ('gzip, deflate, sdch'), 'Accept-Language': ('en'), 'origin': ('http://stats.nba.com') }
 
 
 def _api_scrape(json_inp, ndx):
