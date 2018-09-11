@@ -400,7 +400,7 @@ class TeamPlayerOnOffSummary(_TeamDashboard):
         return _api_scrape(self.json, 2)
 
 
-class TeamGameLogs:
+class TeamGameLog:
     _endpoint = 'teamgamelog'
 
     def __init__(self,
@@ -415,6 +415,20 @@ class TeamGameLogs:
     def info(self):
         return _api_scrape(self.json, 0)
 
+class TeamGameLogs:
+    _endpoint = 'teamgamelogs'
+
+    def __init__(self,
+                 league_id=constants.League.NBA
+                 season=constants.CURRENT_SEASON,
+                 season_type=constants.SeasonType.Default):
+        self.json = _get_json(endpoint=self._endpoint,
+                              params={'LeagueID': league_id,
+                                      'Season': season,
+                                      'SeasonType': season_type})
+
+    def info(self):
+        return _api_scrape(self.json, 0)
 
 class TeamSeasons:
     _endpoint = 'teamyearbyyearstats'
