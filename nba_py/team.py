@@ -419,7 +419,7 @@ class TeamGameLogs:
     _endpoint = 'teamgamelogs'
 
     def __init__(self,
-                 league_id=constants.League.NBA
+                 league_id=constants.League.NBA,
                  season=constants.CURRENT_SEASON,
                  season_type=constants.SeasonType.Default):
         self.json = _get_json(endpoint=self._endpoint,
